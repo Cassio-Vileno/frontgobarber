@@ -5,6 +5,7 @@ import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 import getValidationErrors from '../../utils/getValidationsErros';
 
 import logoImg from '../../assets/logo.svg';
@@ -12,7 +13,7 @@ import logoImg from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AtimationContainer } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -45,30 +46,32 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
       <Content>
-        <img src={logoImg} alt="GoBarber" />
+        <AtimationContainer>
+          <img src={logoImg} alt="GoBarber" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu cadastro</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça seu cadastro</h1>
 
-          <Input name="name" placeholder="Nome">
-            <FiUser />
-          </Input>
+            <Input name="name" placeholder="Nome">
+              <FiUser />
+            </Input>
 
-          <Input name="email" placeholder="E-mail">
-            <FiMail />
-          </Input>
+            <Input name="email" placeholder="E-mail">
+              <FiMail />
+            </Input>
 
-          <Input name="password" type="password" placeholder="Senha">
-            <FiLock />
-          </Input>
+            <Input name="password" type="password" placeholder="Senha">
+              <FiLock />
+            </Input>
 
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <a href="#">
-          <FiArrowLeft />
-          Voltar para login
-        </a>
+          <Link to="/">
+            <FiArrowLeft />
+            Voltar para login
+          </Link>
+        </AtimationContainer>
       </Content>
     </Container>
   );

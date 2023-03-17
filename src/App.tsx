@@ -5,7 +5,7 @@ import SignIn from './pages/SignIn';
 import Globalstyle from './styles/global';
 
 import AppProvider from './hooks';
-import Routes from './routes';
+import { Routes } from './routes';
 
 const App: React.FC = () => (
   <BrowserRouter>
